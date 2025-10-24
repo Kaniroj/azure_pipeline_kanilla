@@ -1,80 +1,59 @@
+# file: data_extract_load/load_data_jobs.py
+
 import dlt
 import requests
 import json
 
+# DLT configuration (برای کنترل رفتار staging)
 dlt.config["load.truncate_staging_dataset"] = True
 
-query = ""
-table_name = "job_ads"
-occupation_fields = ("j7Cq_ZJe_GkT", "9puE_nYg_crq", "MVqp_eS8_kDZ")
-#params = {"q": query, "limit": 100, "occupation-field": occupation_fields}
-params = {"q": "developer", "limit": 10}
+# پارامترهای پیش‌فرض
+DEFAULT_TABLE_NAME = "job_ads"
+DEFAULT_LIMIT = 100
 
 
-def _get_ads(url_for_search, params):
+def _get_ads(url_for_search: str, params: dict) -> dict:
+    """درخواست به API و بازگرداندن JSON نتیجه."""
     headers = {"accept": "application/json"}
     response = requests.get(url_for_search, headers=headers, params=params)
-    response.raise_for_status()  # check for http errors
-    return json.loads(response.content.decode("utf8"))
+    response.raise_for_status()
+    return json.loads(response.content.decode("utf-8"))
 
 
-@dlt.resource(table_name= "job_ads",write_disposition="append")
-def jobsearch_resource(params):
-    url = "https://jobsearch.api.jobtechdev.se"
-    url_for_search = f"{url}/search"
-    limit = params.get("limit", 100)
+@dlt.resource(
+    table_name=DEFAULT_TABLE_NAME,
+    write_disposition="append",  # داده‌های جدید به قبلی اضافه می‌شوند
+)
+def job_ads_resource(params: dict):
+    """
+    DLT resource — داده‌ها را از API JobTech به صورت صفحه‌به‌صفحه می‌خواند.
+    """
+    url = "https://jobsearch.api.jobtechdev.se/search"
+    limit = params.get("limit", DEFAULT_LIMIT)
     offset = 0
 
     while True:
-        # build this page’s params
         page_params = dict(params, offset=offset)
-        data = _get_ads(url_for_search, page_params)
+        data = _get_ads(url, page_params)
 
         hits = data.get("hits", [])
         if not hits:
-            # no more results
             break
 
-        # yield each ad on this page
         for ad in hits:
             yield ad
 
-        # if fewer than a full page was returned, we’re done
         if len(hits) < limit or offset > 1900:
             break
 
         offset += limit
 
+
 @dlt.source
-def jobsearch_source():
-    
-    return jobsearch_resource(params)
-
-
-
-
-#def run_pipeline(query, table_name, occupation_fields):
-    # pipeline = dlt.pipeline(
-    #     pipeline_name="HRpipeline",
-    #     destination="snowflake",
-    #     dataset_name="staging",
- #   )
-
-    # for occupation_field in occupation_fields:
-    #     params = {"q": query, "limit": 100, "occupation-field": occupation_field}
-    #     load_info = pipeline.run(
-    #         jobsearch_resource(params=params), table_name=table_name
-    #     )
-    #     print(f"Occupation field: {occupation_field}")
-    #     print(load_info)
-
-
-
-
-
-    # Bygg och anläggning, "Kultur, media, design", "Pedagogik"
-    # run_pipeline("", "job_ads", ("j7Cq_ZJe_GkT", "9puE_nYg_crq", "MVqp_eS8_kDZ"))
-    
- 
-
-   
+def job_ads_source(q: str = "developer", limit: int = DEFAULT_LIMIT):
+    """
+    DLT source — برای Dagster.
+    می‌تواند با پارامترهای مختلف (q یا limit) صدا زده شود.
+    """
+    params = {"q": q, "limit": limit}
+    return job_ads_resource(params)
