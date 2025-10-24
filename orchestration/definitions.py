@@ -1,72 +1,29 @@
 from pathlib import Path
-import dlt
-import dagster as dg
-#from dagster_dlt import dlt_resource, dlt_source
-from dagster_dbt import DbtCliResource, DbtProject, dbt_assets
+import sys
 from dagster import Definitions
 from dagster_dlt import dlt_assets, DagsterDltResource
-import sys
-import os
 
-DUCKDB_PATH = os.getenv("DUCKDB_PATH")
-DBT_PROFILES_DIR = os.getenv("DBT_PROFILES_DIR")
-#db_path = str(Path(__file__).parents[1] / "data_warehouse/job_ads.duckdb")
-sys.path.insert(0, "../data_extract_load")
-from load_data_jobs import jobsearch_source
+# اضافه کردن مسیر منبع داده
+ROOT_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT_DIR / "data_extract_load"))
 
-#dlt assets
-dlt_resource = DagsterDltResource()
+from load_data_jobs import job_ads_source
 
-@dlt_assets(
-    dlt_source = jobsearch_source(),
-    dlt_pipeline= dlt.pipeline(
-        pipeline_name="HRpipeline",
-        dataset_name="staging",
-        destination=dlt.destinations.duckdb(DUCKDB_PATH)
-    
-    )
+# ساخت resource از DLT
+dlt_resource = DagsterDltResource(
+    pipeline_name="job_ads_pipeline",
+    destination="duckdb",  # یا snowflake, bigquery, postgres...
+    dataset_name="staging",
 )
-def dlt_load(context:dg.AssetExecutionContext, dlt:DagsterDltResource):
-    yield from dlt.run(context=context)
-    
 
+# تعریف asset در Dagster
+job_ads_assets = dlt_assets(
+    dlt_source=job_ads_source,
+    dlt_resource_key="dlt_resource",
+)
 
-dbt_project_directory = Path(__file__).parents[1] / "data_transformation" 
-
-
-
-dbt_project = DbtProject(project_dir=dbt_project_directory, profiles_dir=Path(DBT_PROFILES_DIR))
-
-#CLI commands e.g. dbt build, dbt run, dbt test
-dbt_resource=DbtCliResource(project_dir= dbt_project)   
-
-dbt_project.prepare_if_dev()
-
-#dbt assets
-
-@dbt_assets(manifest=dbt_project.manifest_path)
-def dbt_models(context: dg.AssetExecutionContext, dbt: DbtCliResource):
-    yield from dbt.cli(["build"],context=context).stream()
-    
-
-#jobs
-job_dlt = dg.define_asset_job("job_dlt", selection=dg.AssetSelection.keys("dlt_jobsearch_source_jobsearch_resource"))
-
-job_dbt = dg.define_asset_job("job_dbt", selection=dg.AssetSelection.key_prefixes("DWH","marts"))
-
-
-schedule_dlt = dg.ScheduleDefinition(job=job_dlt, cron_schedule="0 9 * * MON")  # every Monday at 9am
-@dg.asset_sensor(job=job_dbt, asset_key=dg.AssetKey("dlt_jobsearch_source_jobsearch_resource"))
-
-def dlt_load_sensor():
-    yield dg.RunRequest()
-    
-
-#definitions
-defs = dg.Definitions(
-    assets=[dlt_load, dbt_models],
-    resources={"dlt": dlt_resource, "dbt": dbt_resource},
-    jobs=[job_dlt, job_dbt],
-    schedules=[schedule_dlt],
-    sensors=[dlt_load_sensor]
+# تعریف اصلی Dagster
+defs = Definitions(
+    assets=[job_ads_assets],
+    resources={"dlt_resource": dlt_resource},
 )
