@@ -7,7 +7,9 @@ dlt.config["load.truncate_staging_dataset"] = True
 query = ""
 table_name = "job_ads"
 occupation_fields = ("j7Cq_ZJe_GkT", "9puE_nYg_crq", "MVqp_eS8_kDZ")
-params = {"q": query, "limit": 100, "occupation-field": occupation_fields}
+#params = {"q": query, "limit": 100, "occupation-field": occupation_fields}
+params = {"q": "developer", "limit": 10}
+
 
 def _get_ads(url_for_search, params):
     headers = {"accept": "application/json"}
@@ -47,6 +49,8 @@ def jobsearch_resource(params):
 def jobsearch_source():
     
     return jobsearch_resource(params)
+
+
 
 
 #def run_pipeline(query, table_name, occupation_fields):
