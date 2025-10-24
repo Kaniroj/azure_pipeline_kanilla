@@ -57,3 +57,24 @@ def job_ads_source(q: str = "developer", limit: int = DEFAULT_LIMIT):
     """
     params = {"q": q, "limit": limit}
     return job_ads_resource(params)
+
+if __name__ == "__main__":
+    print("🚀 Starting DLT pipeline...")
+
+    from pathlib import Path
+
+pipeline = dlt.pipeline(
+    pipeline_name="job_ads_pipeline",
+    destination=dlt.destinations.duckdb(
+        str(Path(__file__).parents[1] / "data_warehouse" / "job_ads.duckdb")
+    ),
+    dataset_name="staging"
+)
+
+
+    # اجرای سورس DLT
+load_info = pipeline.run(job_ads_source())
+
+print("✅ Pipeline completed!")
+print(load_info)
+

@@ -1,0 +1,13 @@
+name: "job_ads_dbt"
+version: "1.0"
+config-version: 2
+
+profile: "duckdb_profile"
+
+model-paths: ["dbt/models"]
+target-path: "dbt/target"
+clean-targets: ["dbt/target"]
+
+models:
+  job_ads_dbt:
+    +materialized: view
