@@ -1,9 +1,9 @@
 from pathlib import Path
 import sys
 import dlt
-from dagster import Definitions
+from dagster import Definitions, define_asset_job, ScheduleDefinition
 from dagster_dlt import dlt_assets, DagsterDltResource
-from dagster_dbt import DbtCliResource, load_assets_from_dbt_project
+from dagster_dbt import DbtCliResource, dbt_assets
 
 # مسیرها
 ROOT_DIR = Path(__file__).resolve().parents[1]
@@ -12,20 +12,25 @@ DBT_PROFILES_DIR = Path.home() / ".dbt"
 sys.path.insert(0, str(ROOT_DIR / "data_extract_load"))
 
 # ---------- DLT ----------
-from load_data_jobs import jobsearch_source  # مطمئن شو اسم فانکشن در فایل DLT همین هست
+from load_data_jobs import job_ads_source  # اسم فانکشن DLT در فایل load_data_jobs.py
 
 pipeline = dlt.pipeline(
     pipeline_name="job_ads_pipeline",
     destination="duckdb",
-    dataset_name="staging"
+    dataset_name="staging",
 )
 
-dlt_resource = DagsterDltResource()
+dlt_resource = DagsterDltResource(
+    pipeline_name="job_ads_pipeline",
+    destination="duckdb",
+    dataset_name="staging",
+)
 
-@dlt_assets(dlt_source=jobsearch_source, dlt_pipeline=pipeline)
-def dlt_jobsearch_source_jobsearch_resource(_):
-    """DLT asset that loads job ads from API."""
-    return
+# تعریف DLT asset
+job_ads_assets = dlt_assets(
+    dlt_source=job_ads_source(),
+    dlt_pipeline=pipeline
+)
 
 # ---------- DBT ----------
 dbt_resource = DbtCliResource(
@@ -33,16 +38,29 @@ dbt_resource = DbtCliResource(
     profiles_dir=str(DBT_PROFILES_DIR),
 )
 
-# این متد جدید load_assets_from_dbt_project باعث میشه Dagster
-# به‌صورت خودکار فایل manifest.json رو بخونه و meta.dagster.asset_key رو تطبیق بده
-dbt_assets = load_assets_from_dbt_project(
-    project_dir=str(DBT_PROJECT_DIR),
-    profiles_dir=str(DBT_PROFILES_DIR),
+@dbt_assets(manifest=str(DBT_PROJECT_DIR / "target" / "manifest.json"))
+def dbt_job_ads_assets(context):
+    """Run dbt models."""
+    yield from context.run_dbt_command(["run"])
+
+# ---------- JOB ----------
+# اینجا به جای string، از خود object asset استفاده می‌کنیم
+full_etl_job = define_asset_job(
+    name="full_etl_job",
+    selection=[job_ads_assets, dbt_job_ads_assets]
+)
+
+# ---------- SCHEDULE ----------
+full_etl_schedule = ScheduleDefinition(
+    job=full_etl_job,
+    cron_schedule="0 2 * * *",  # هر روز ساعت ۲ صبح
 )
 
 # ---------- DAGSTER DEFINITIONS ----------
 defs = Definitions(
-    assets=[dlt_jobsearch_source_jobsearch_resource, dbt_assets],
+    assets=[job_ads_assets, dbt_job_ads_assets],
+    jobs=[full_etl_job],
+    schedules=[full_etl_schedule],
     resources={
         "dlt": dlt_resource,
         "dbt": dbt_resource,

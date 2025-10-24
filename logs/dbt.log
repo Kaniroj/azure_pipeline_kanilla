@@ -8408,3 +8408,1326 @@ drop view if exists "job_ads"."main"."dim_occupation__dbt_backup" cascade
 [0m22:30:17.393152 [debug] [MainThread]: Command `dbt run` failed at 22:30:17.393152 after 4.06 seconds
 [0m22:30:17.393152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4CBB27F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4CA1B9550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4CA1B98E0>]}
 [0m22:30:17.395130 [debug] [MainThread]: Flushing usage events
+[0m22:32:53.026899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162968B88F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162968B86B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162968B8B30>]}
+
+
+============================== 22:32:53.036098 | 72df5de3-9602-4f61-ad8f-d8f6838d70a1 ==============================
+[0m22:32:53.036098 [info ] [MainThread]: Running with dbt=1.8.3
+[0m22:32:53.036098 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\aware\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\Users\\aware\\Documents\\github\\Projects\\azure_pipeline_kanilla\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m22:32:53.197528 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m22:32:53.197528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016296077A10>]}
+[0m22:32:53.400544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162969183B0>]}
+[0m22:32:53.487731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016296526840>]}
+[0m22:32:53.492048 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m22:32:53.903496 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m22:32:54.098748 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:32:54.101308 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:32:54.138881 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162980264B0>]}
+[0m22:32:54.271571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016298149520>]}
+[0m22:32:54.271571 [info ] [MainThread]: Found 15 models, 1 source, 537 macros
+[0m22:32:54.271571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162980AB020>]}
+[0m22:32:54.277746 [info ] [MainThread]: 
+[0m22:32:54.279999 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:32:54.289994 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_job_ads'
+[0m22:32:54.402978 [debug] [ThreadPool]: Using duckdb connection "list_job_ads"
+[0m22:32:54.402978 [debug] [ThreadPool]: On list_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_job_ads"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"job_ads"'
+    
+  
+  
+[0m22:32:54.402978 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:32:54.434086 [debug] [ThreadPool]: SQL status: OK in 0.029 seconds
+[0m22:32:54.438604 [debug] [ThreadPool]: On list_job_ads: Close
+[0m22:32:54.444666 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_job_ads, now create_job_ads_main)
+[0m22:32:54.444666 [debug] [ThreadPool]: Creating schema "database: "job_ads"
+schema: "main"
+"
+[0m22:32:54.457067 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:32:54.457067 [debug] [ThreadPool]: On create_job_ads_main: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_job_ads_main"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='job_ads'
+        and type='sqlite'
+    
+  
+[0m22:32:54.458090 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:32:54.475647 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m22:32:54.485455 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:32:54.485455 [debug] [ThreadPool]: On create_job_ads_main: BEGIN
+[0m22:32:54.485455 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:32:54.487845 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:32:54.488972 [debug] [ThreadPool]: On create_job_ads_main: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_job_ads_main"} */
+
+    
+    
+        create schema if not exists "job_ads"."main"
+    
+[0m22:32:54.488972 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:32:54.490985 [debug] [ThreadPool]: On create_job_ads_main: COMMIT
+[0m22:32:54.490985 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:32:54.490985 [debug] [ThreadPool]: On create_job_ads_main: COMMIT
+[0m22:32:54.490985 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:32:54.490985 [debug] [ThreadPool]: On create_job_ads_main: Close
+[0m22:32:54.499396 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_job_ads_main'
+[0m22:32:54.506544 [debug] [ThreadPool]: Using duckdb connection "list_job_ads_main"
+[0m22:32:54.506544 [debug] [ThreadPool]: On list_job_ads_main: BEGIN
+[0m22:32:54.506544 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:32:54.531835 [debug] [ThreadPool]: SQL status: OK in 0.024 seconds
+[0m22:32:54.531835 [debug] [ThreadPool]: Using duckdb connection "list_job_ads_main"
+[0m22:32:54.531835 [debug] [ThreadPool]: On list_job_ads_main: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_job_ads_main"} */
+select
+      'job_ads' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'job_ads'
+  
+[0m22:32:54.562784 [debug] [ThreadPool]: SQL status: OK in 0.030 seconds
+[0m22:32:54.564495 [debug] [ThreadPool]: On list_job_ads_main: ROLLBACK
+[0m22:32:54.564495 [debug] [ThreadPool]: Failed to rollback 'list_job_ads_main'
+[0m22:32:54.564495 [debug] [ThreadPool]: On list_job_ads_main: Close
+[0m22:32:54.572525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016297DBEAB0>]}
+[0m22:32:54.574903 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:32:54.574903 [debug] [MainThread]: On master: BEGIN
+[0m22:32:54.574903 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:32:54.601663 [debug] [MainThread]: SQL status: OK in 0.025 seconds
+[0m22:32:54.601663 [debug] [MainThread]: On master: COMMIT
+[0m22:32:54.602937 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:32:54.603451 [debug] [MainThread]: On master: COMMIT
+[0m22:32:54.604463 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:32:54.604463 [debug] [MainThread]: On master: Close
+[0m22:32:54.604463 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:32:54.610259 [info ] [MainThread]: 
+[0m22:32:54.615028 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:32:54.616599 [info ] [Thread-1 (]: 1 of 15 START sql view model main.src_auxilliary_attributes .................... [RUN]
+[0m22:32:54.616599 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.job_ads_dbt.src_auxilliary_attributes'
+[0m22:32:54.616599 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:32:54.626529 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.632596 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:32:54.676271 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.676271 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.676271 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: BEGIN
+[0m22:32:54.676271 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:32:54.704117 [debug] [Thread-1 (]: SQL status: OK in 0.023 seconds
+[0m22:32:54.705556 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.705556 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+
+  
+  create view "job_ads"."main"."src_auxilliary_attributes__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    COALESCE(experience_required, FALSE) as experience_required,
+    COALESCE(access_to_own_car, FALSE) as access_to_own_car,
+    COALESCE(driving_license_required, FALSE) as driving_license_required
+from STG_HR_JOBS
+  );
+
+[0m22:32:54.706689 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:32:54.712455 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.712455 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+alter view "job_ads"."main"."src_auxilliary_attributes" rename to "src_auxilliary_attributes__dbt_backup"
+[0m22:32:54.717388 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:54.721964 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.721964 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+alter view "job_ads"."main"."src_auxilliary_attributes__dbt_tmp" rename to "src_auxilliary_attributes"
+[0m22:32:54.721964 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:54.739782 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: COMMIT
+[0m22:32:54.744808 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.744808 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: COMMIT
+[0m22:32:54.769911 [debug] [Thread-1 (]: SQL status: OK in 0.024 seconds
+[0m22:32:54.769911 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:32:54.769911 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+drop view if exists "job_ads"."main"."src_auxilliary_attributes__dbt_backup" cascade
+[0m22:32:54.780057 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:32:54.787814 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: Close
+[0m22:32:54.844156 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016295FFD700>]}
+[0m22:32:54.844156 [info ] [Thread-1 (]: 1 of 15 OK created sql view model main.src_auxilliary_attributes ............... [[32mOK[0m in 0.23s]
+[0m22:32:54.845443 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:32:54.846990 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_employer
+[0m22:32:54.846990 [info ] [Thread-1 (]: 2 of 15 START sql view model main.src_employer ................................. [RUN]
+[0m22:32:54.848510 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_auxilliary_attributes, now model.job_ads_dbt.src_employer)
+[0m22:32:54.848510 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_employer
+[0m22:32:54.860897 [debug] [Thread-1 (]: Compilation Error in model src_employer (dbt/models\src\src_employer.sql)
+  'COALESCE' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m22:32:54.861737 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162987765A0>]}
+[0m22:32:54.862859 [error] [Thread-1 (]: 2 of 15 ERROR creating sql view model main.src_employer ........................ [[31mERROR[0m in 0.01s]
+[0m22:32:54.864540 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_employer
+[0m22:32:54.865103 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_job_ads
+[0m22:32:54.866150 [info ] [Thread-1 (]: 3 of 15 START sql view model main.src_job_ads .................................. [RUN]
+[0m22:32:54.866150 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_employer, now model.job_ads_dbt.src_job_ads)
+[0m22:32:54.869612 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_job_ads
+[0m22:32:54.873367 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.877279 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_job_ads
+[0m22:32:54.885372 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.885372 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.888407 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: BEGIN
+[0m22:32:54.888407 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:54.939370 [debug] [Thread-1 (]: SQL status: OK in 0.051 seconds
+[0m22:32:54.939370 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.941217 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+
+  
+  create view "job_ads"."main"."src_job_ads__dbt_tmp" as (
+    -- this is an extract of the model
+
+with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    id,
+    COALESCE(employment_type__label, 'Ospecifierad') as employment_type,
+    COALESCE(salary_type__label, 'Ospecifierad') as salary_type,
+    COALESCE(duration__label, 'Ospecifierad') as duration,
+    COALESCE(experience_required, FALSE) as experience_required,
+    COALESCE(access_to_own_car, FALSE) as access_to_own_car,
+    COALESCE(driving_license_required, FALSE) as driving_license_required,
+    scope_of_work__min as scope_of_work_min,
+    scope_of_work__max as scope_of_work_max,
+    employer__name as employer_name,
+    occupation__label as occupation,
+    COALESCE(number_of_vacancies, 1) as vacancies,
+    relevance,
+    application_deadline
+from STG_HR_JOBS
+  );
+
+[0m22:32:54.942268 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:32:54.947242 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.947242 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+alter view "job_ads"."main"."src_job_ads" rename to "src_job_ads__dbt_backup"
+[0m22:32:54.949040 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:54.950594 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.950594 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+alter view "job_ads"."main"."src_job_ads__dbt_tmp" rename to "src_job_ads"
+[0m22:32:54.955946 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:54.958355 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: COMMIT
+[0m22:32:54.958355 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.958355 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: COMMIT
+[0m22:32:54.964095 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:54.966676 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:32:54.967686 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+drop view if exists "job_ads"."main"."src_job_ads__dbt_backup" cascade
+[0m22:32:54.971130 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:54.972616 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: Close
+[0m22:32:55.015483 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016298776720>]}
+[0m22:32:55.015483 [info ] [Thread-1 (]: 3 of 15 OK created sql view model main.src_job_ads ............................. [[32mOK[0m in 0.15s]
+[0m22:32:55.018010 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_job_ads
+[0m22:32:55.018664 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_job_description
+[0m22:32:55.019186 [info ] [Thread-1 (]: 4 of 15 START sql view model main.src_job_description .......................... [RUN]
+[0m22:32:55.019186 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_job_ads, now model.job_ads_dbt.src_job_description)
+[0m22:32:55.021087 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_job_description
+[0m22:32:55.022125 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_job_description"
+[0m22:32:55.027115 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_job_description
+[0m22:32:55.033933 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_job_description"
+[0m22:32:55.033933 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:32:55.033933 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: BEGIN
+[0m22:32:55.039576 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:55.083541 [debug] [Thread-1 (]: SQL status: OK in 0.044 seconds
+[0m22:32:55.083541 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:32:55.084626 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+
+  
+  create view "job_ads"."main"."src_job_description__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    id,
+    headline,
+    COALESCE(description__text, 'Beskrivning saknas') as description_text,
+    COALESCE(description__text_formatted, 'Beskrivning saknas') as description_html
+from STG_HR_JOBS
+  );
+
+[0m22:32:55.084626 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:32:55.092716 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:32:55.092716 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+alter view "job_ads"."main"."src_job_description" rename to "src_job_description__dbt_backup"
+[0m22:32:55.094742 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.097776 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:32:55.100317 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+alter view "job_ads"."main"."src_job_description__dbt_tmp" rename to "src_job_description"
+[0m22:32:55.100317 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.103583 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: COMMIT
+[0m22:32:55.103583 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:32:55.103583 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: COMMIT
+[0m22:32:55.109672 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:55.113035 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:32:55.113035 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+drop view if exists "job_ads"."main"."src_job_description__dbt_backup" cascade
+[0m22:32:55.117286 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:55.120968 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: Close
+[0m22:32:55.161452 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001629896C650>]}
+[0m22:32:55.162030 [info ] [Thread-1 (]: 4 of 15 OK created sql view model main.src_job_description ..................... [[32mOK[0m in 0.14s]
+[0m22:32:55.163133 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_job_description
+[0m22:32:55.163133 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_job_details
+[0m22:32:55.164654 [info ] [Thread-1 (]: 5 of 15 START sql view model main.src_job_details .............................. [RUN]
+[0m22:32:55.165932 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_job_description, now model.job_ads_dbt.src_job_details)
+[0m22:32:55.165932 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_job_details
+[0m22:32:55.169993 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_job_details"
+[0m22:32:55.172247 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_job_details
+[0m22:32:55.178199 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_job_details"
+[0m22:32:55.178199 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:32:55.178199 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: BEGIN
+[0m22:32:55.178199 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:55.247498 [debug] [Thread-1 (]: SQL status: OK in 0.063 seconds
+[0m22:32:55.247498 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:32:55.249629 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+
+  
+  create view "job_ads"."main"."src_job_details__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    COALESCE(employment_type__label, 'Ospecifierad') as employment_type,
+    COALESCE(salary_type__label, 'Ospecifierad') as salary_type,
+    COALESCE(duration__label, 'Ospecifierad') as duration,
+    scope_of_work__min as scope_of_work_min,
+    scope_of_work__max as scope_of_work_max
+from STG_HR_JOBS
+  );
+
+[0m22:32:55.253505 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:55.258934 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:32:55.261826 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+alter view "job_ads"."main"."src_job_details" rename to "src_job_details__dbt_backup"
+[0m22:32:55.262820 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.269719 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:32:55.270972 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+alter view "job_ads"."main"."src_job_details__dbt_tmp" rename to "src_job_details"
+[0m22:32:55.272108 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.274783 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: COMMIT
+[0m22:32:55.275894 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:32:55.275894 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: COMMIT
+[0m22:32:55.281102 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m22:32:55.283620 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:32:55.283620 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+drop view if exists "job_ads"."main"."src_job_details__dbt_backup" cascade
+[0m22:32:55.295536 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m22:32:55.297555 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: Close
+[0m22:32:55.370790 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162988263F0>]}
+[0m22:32:55.372320 [info ] [Thread-1 (]: 5 of 15 OK created sql view model main.src_job_details ......................... [[32mOK[0m in 0.21s]
+[0m22:32:55.375894 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_job_details
+[0m22:32:55.377914 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_occupation
+[0m22:32:55.378937 [info ] [Thread-1 (]: 6 of 15 START sql view model main.src_occupation ............................... [RUN]
+[0m22:32:55.381988 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_job_details, now model.job_ads_dbt.src_occupation)
+[0m22:32:55.384791 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_occupation
+[0m22:32:55.391769 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_occupation"
+[0m22:32:55.394328 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_occupation
+[0m22:32:55.402476 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_occupation"
+[0m22:32:55.406446 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:32:55.408495 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: BEGIN
+[0m22:32:55.410515 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:55.483776 [debug] [Thread-1 (]: SQL status: OK in 0.072 seconds
+[0m22:32:55.485596 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:32:55.485596 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+
+  
+  create view "job_ads"."main"."src_occupation__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    occupation_group__concept_id as occupation_group_id,
+    occupation_field__concept_id as occupation_field_id,
+    occupation__label as occupation,
+    occupation_group__label as occupation_group,
+    occupation_field__label as occupation_field
+from STG_HR_JOBS
+  );
+
+[0m22:32:55.489641 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:55.496477 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:32:55.498514 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+alter view "job_ads"."main"."src_occupation" rename to "src_occupation__dbt_backup"
+[0m22:32:55.500529 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.510579 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:32:55.511789 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+alter view "job_ads"."main"."src_occupation__dbt_tmp" rename to "src_occupation"
+[0m22:32:55.513805 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.519317 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: COMMIT
+[0m22:32:55.519317 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:32:55.521334 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: COMMIT
+[0m22:32:55.527174 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:32:55.532698 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:32:55.532698 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+drop view if exists "job_ads"."main"."src_occupation__dbt_backup" cascade
+[0m22:32:55.539280 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:55.542411 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: Close
+[0m22:32:55.597382 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001629996D130>]}
+[0m22:32:55.598398 [info ] [Thread-1 (]: 6 of 15 OK created sql view model main.src_occupation .......................... [[32mOK[0m in 0.22s]
+[0m22:32:55.599414 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_occupation
+[0m22:32:55.601462 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:32:55.601462 [info ] [Thread-1 (]: 7 of 15 START sql view model main.dim_auxilliary_attributes .................... [RUN]
+[0m22:32:55.601462 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_occupation, now model.job_ads_dbt.dim_auxilliary_attributes)
+[0m22:32:55.601462 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:32:55.628415 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.629690 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:32:55.633111 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.636030 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.637848 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: BEGIN
+[0m22:32:55.639004 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:55.685411 [debug] [Thread-1 (]: SQL status: OK in 0.046 seconds
+[0m22:32:55.685411 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.686431 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+
+  
+  create view "job_ads"."main"."dim_auxilliary_attributes__dbt_tmp" as (
+    with src_auxilliary_attributes as (select * from "job_ads"."main"."src_auxilliary_attributes")
+
+
+select
+    md5(cast(coalesce(cast(experience_required as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(access_to_own_car as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(driving_license_required as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as auxilliary_id,
+    max(experience_required) as experience_required,
+    max(access_to_own_car) as access_to_own_car,
+    max(driving_license_required) as driving_license_required
+from src_auxilliary_attributes
+group by auxilliary_id
+
+ --This model creates a dimension table for auxiliary attributes related to job postings.
+  );
+
+[0m22:32:55.691831 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:55.696832 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.698005 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+alter view "job_ads"."main"."dim_auxilliary_attributes" rename to "dim_auxilliary_attributes__dbt_backup"
+[0m22:32:55.699112 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.704612 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.706125 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+alter view "job_ads"."main"."dim_auxilliary_attributes__dbt_tmp" rename to "dim_auxilliary_attributes"
+[0m22:32:55.707271 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.708394 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: COMMIT
+[0m22:32:55.710606 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.710606 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: COMMIT
+[0m22:32:55.735649 [debug] [Thread-1 (]: SQL status: OK in 0.024 seconds
+[0m22:32:55.739785 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:32:55.739785 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+drop view if exists "job_ads"."main"."dim_auxilliary_attributes__dbt_backup" cascade
+[0m22:32:55.748873 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m22:32:55.750910 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: Close
+[0m22:32:55.803020 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162987977A0>]}
+[0m22:32:55.803020 [info ] [Thread-1 (]: 7 of 15 OK created sql view model main.dim_auxilliary_attributes ............... [[32mOK[0m in 0.20s]
+[0m22:32:55.804784 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:32:55.806802 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_employer
+[0m22:32:55.806802 [info ] [Thread-1 (]: 8 of 15 SKIP relation main.dim_employer ........................................ [[33mSKIP[0m]
+[0m22:32:55.808494 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_employer
+[0m22:32:55.808494 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.fct_job_ads
+[0m22:32:55.810005 [info ] [Thread-1 (]: 9 of 15 START sql view model main.fct_job_ads .................................. [RUN]
+[0m22:32:55.810005 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.dim_auxilliary_attributes, now model.job_ads_dbt.fct_job_ads)
+[0m22:32:55.810005 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.fct_job_ads
+[0m22:32:55.823487 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.825903 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.fct_job_ads
+[0m22:32:55.827253 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.831663 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.831663 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: BEGIN
+[0m22:32:55.833169 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:55.876277 [debug] [Thread-1 (]: SQL status: OK in 0.043 seconds
+[0m22:32:55.876277 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.876277 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+
+  
+  create view "job_ads"."main"."fct_job_ads__dbt_tmp" as (
+    with HR_JOBS as (select * from "job_ads"."main"."src_job_ads")
+
+select
+    id as job_description_id,
+    md5(cast(coalesce(cast(experience_required as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(access_to_own_car as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(driving_license_required as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as auxilliary_id,
+    md5(cast(coalesce(cast(employer_name as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as employer_id,
+    md5(cast(coalesce(cast(employment_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(salary_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(duration as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_min as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_max as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as job_details_id,
+    md5(cast(coalesce(cast(occupation as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as occupation_id,
+    vacancies,
+    relevance,
+    application_deadline
+from HR_JOBS
+  );
+
+[0m22:32:55.876277 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:55.885199 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.888157 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+alter view "job_ads"."main"."fct_job_ads" rename to "fct_job_ads__dbt_backup"
+[0m22:32:55.890388 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.894819 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.894819 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+alter view "job_ads"."main"."fct_job_ads__dbt_tmp" rename to "fct_job_ads"
+[0m22:32:55.896841 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:55.896841 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: COMMIT
+[0m22:32:55.898852 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.898852 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: COMMIT
+[0m22:32:55.904382 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m22:32:55.910234 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:32:55.911653 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+drop view if exists "job_ads"."main"."fct_job_ads__dbt_backup" cascade
+[0m22:32:55.914665 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:55.914665 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: Close
+[0m22:32:55.960507 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001629998FC20>]}
+[0m22:32:55.960507 [info ] [Thread-1 (]: 9 of 15 OK created sql view model main.fct_job_ads ............................. [[32mOK[0m in 0.15s]
+[0m22:32:55.960507 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.fct_job_ads
+[0m22:32:55.960507 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_job_description
+[0m22:32:55.960507 [info ] [Thread-1 (]: 10 of 15 START sql view model main.dim_job_description ......................... [RUN]
+[0m22:32:55.964039 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.fct_job_ads, now model.job_ads_dbt.dim_job_description)
+[0m22:32:55.964039 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_job_description
+[0m22:32:55.967259 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_job_description"
+[0m22:32:55.967259 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_job_description
+[0m22:32:55.978010 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_job_description"
+[0m22:32:55.979778 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:32:55.979778 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: BEGIN
+[0m22:32:55.979778 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:56.025381 [debug] [Thread-1 (]: SQL status: OK in 0.045 seconds
+[0m22:32:56.025381 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:32:56.025381 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+
+  
+  create view "job_ads"."main"."dim_job_description__dbt_tmp" as (
+    with src_job_description as (select * from "job_ads"."main"."src_job_description")
+
+select
+    id as job_description_id,
+    headline,
+    description_text,
+    description_html
+from src_job_description
+  );
+
+[0m22:32:56.030415 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:56.030415 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:32:56.036543 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+alter view "job_ads"."main"."dim_job_description" rename to "dim_job_description__dbt_backup"
+[0m22:32:56.037827 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:56.042299 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:32:56.044063 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+alter view "job_ads"."main"."dim_job_description__dbt_tmp" rename to "dim_job_description"
+[0m22:32:56.044063 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:56.046717 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: COMMIT
+[0m22:32:56.046717 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:32:56.046717 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: COMMIT
+[0m22:32:56.052367 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:56.055941 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:32:56.055941 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+drop view if exists "job_ads"."main"."dim_job_description__dbt_backup" cascade
+[0m22:32:56.061536 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:56.061536 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: Close
+[0m22:32:56.100388 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016298768890>]}
+[0m22:32:56.101407 [info ] [Thread-1 (]: 10 of 15 OK created sql view model main.dim_job_description .................... [[32mOK[0m in 0.14s]
+[0m22:32:56.101407 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_job_description
+[0m22:32:56.102934 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_job_details
+[0m22:32:56.102934 [info ] [Thread-1 (]: 11 of 15 START sql view model main.dim_job_details ............................. [RUN]
+[0m22:32:56.102934 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.dim_job_description, now model.job_ads_dbt.dim_job_details)
+[0m22:32:56.102934 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_job_details
+[0m22:32:56.110594 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.113329 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_job_details
+[0m22:32:56.121240 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.123904 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.123904 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: BEGIN
+[0m22:32:56.125947 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:56.169602 [debug] [Thread-1 (]: SQL status: OK in 0.044 seconds
+[0m22:32:56.169602 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.171581 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+
+  
+  create view "job_ads"."main"."dim_job_details__dbt_tmp" as (
+    with src_job_details as (select * from "job_ads"."main"."src_job_details")
+
+select
+    md5(cast(coalesce(cast(employment_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(salary_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(duration as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_min as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_max as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as job_details_id,
+    max(employment_type) as employment_type,
+    max(salary_type) as salary_type,
+    max(duration) as duration,
+    max(scope_of_work_min) as scope_of_work_min,
+    max(scope_of_work_max) as scope_of_work_max
+from src_job_details
+group by job_details_id
+  );
+
+[0m22:32:56.175981 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:56.255548 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.257070 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+alter view "job_ads"."main"."dim_job_details" rename to "dim_job_details__dbt_backup"
+[0m22:32:56.257070 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:56.259494 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.259494 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+alter view "job_ads"."main"."dim_job_details__dbt_tmp" rename to "dim_job_details"
+[0m22:32:56.259494 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:56.264796 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: COMMIT
+[0m22:32:56.264796 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.264796 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: COMMIT
+[0m22:32:56.270610 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:32:56.275334 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:32:56.275334 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+drop view if exists "job_ads"."main"."dim_job_details__dbt_backup" cascade
+[0m22:32:56.278079 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:32:56.280121 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: Close
+[0m22:32:56.322354 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162999B7860>]}
+[0m22:32:56.325406 [info ] [Thread-1 (]: 11 of 15 OK created sql view model main.dim_job_details ........................ [[32mOK[0m in 0.22s]
+[0m22:32:56.327083 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_job_details
+[0m22:32:56.328108 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_occupation
+[0m22:32:56.329482 [info ] [Thread-1 (]: 12 of 15 START sql view model main.dim_occupation .............................. [RUN]
+[0m22:32:56.329482 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.dim_job_details, now model.job_ads_dbt.dim_occupation)
+[0m22:32:56.331505 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_occupation
+[0m22:32:56.340555 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.342876 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_occupation
+[0m22:32:56.346135 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.346135 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.346135 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: BEGIN
+[0m22:32:56.346135 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:32:56.391314 [debug] [Thread-1 (]: SQL status: OK in 0.042 seconds
+[0m22:32:56.392690 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.393210 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+
+  
+  create view "job_ads"."main"."dim_occupation__dbt_tmp" as (
+    with src_occupation as (select * from "job_ads"."main"."src_occupation")
+
+-- we use aggregate function max() for deduplicate, but there are more alternative codes one can use for this purpose
+select
+    md5(cast(coalesce(cast(occupation as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as occupation_id,
+    occupation,
+    max(occupation_group) as occupation_group,
+    max(occupation_field) as occupation_field
+from src_occupation
+group by occupation
+  );
+
+[0m22:32:56.393210 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:32:56.397520 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.397520 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+alter view "job_ads"."main"."dim_occupation" rename to "dim_occupation__dbt_backup"
+[0m22:32:56.401559 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:56.405496 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.407515 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+alter view "job_ads"."main"."dim_occupation__dbt_tmp" rename to "dim_occupation"
+[0m22:32:56.407515 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:32:56.411036 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: COMMIT
+[0m22:32:56.411661 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.411661 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: COMMIT
+[0m22:32:56.419301 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m22:32:56.423300 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:32:56.424317 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+drop view if exists "job_ads"."main"."dim_occupation__dbt_backup" cascade
+[0m22:32:56.427859 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:32:56.427859 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: Close
+[0m22:32:56.485310 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '72df5de3-9602-4f61-ad8f-d8f6838d70a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162999914C0>]}
+[0m22:32:56.485310 [info ] [Thread-1 (]: 12 of 15 OK created sql view model main.dim_occupation ......................... [[32mOK[0m in 0.15s]
+[0m22:32:56.486861 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_occupation
+[0m22:32:56.486861 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.mart_Bygg_och_anlaggning
+[0m22:32:56.489296 [info ] [Thread-1 (]: 13 of 15 SKIP relation main.mart_Bygg_och_anlaggning ........................... [[33mSKIP[0m]
+[0m22:32:56.490567 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.mart_Bygg_och_anlaggning
+[0m22:32:56.491479 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.mart_Kultur_media_design
+[0m22:32:56.492512 [info ] [Thread-1 (]: 14 of 15 SKIP relation main.mart_Kultur_media_design ........................... [[33mSKIP[0m]
+[0m22:32:56.493029 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.mart_Kultur_media_design
+[0m22:32:56.493029 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.mart_pedagogik
+[0m22:32:56.495800 [info ] [Thread-1 (]: 15 of 15 SKIP relation main.mart_pedagogik ..................................... [[33mSKIP[0m]
+[0m22:32:56.497321 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.mart_pedagogik
+[0m22:32:56.499075 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:32:56.499075 [debug] [MainThread]: On master: BEGIN
+[0m22:32:56.499075 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:32:56.542708 [debug] [MainThread]: SQL status: OK in 0.044 seconds
+[0m22:32:56.542708 [debug] [MainThread]: On master: COMMIT
+[0m22:32:56.545628 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:32:56.545628 [debug] [MainThread]: On master: COMMIT
+[0m22:32:56.545628 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:32:56.545628 [debug] [MainThread]: On master: Close
+[0m22:32:56.551433 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:32:56.551433 [debug] [MainThread]: Connection 'create_job_ads_main' was properly closed.
+[0m22:32:56.551433 [debug] [MainThread]: Connection 'list_job_ads_main' was properly closed.
+[0m22:32:56.551433 [debug] [MainThread]: Connection 'model.job_ads_dbt.dim_occupation' was properly closed.
+[0m22:32:56.551433 [info ] [MainThread]: 
+[0m22:32:56.553448 [info ] [MainThread]: Finished running 15 view models in 0 hours 0 minutes and 2.27 seconds (2.27s).
+[0m22:32:56.557534 [debug] [MainThread]: Command end result
+[0m22:32:56.607039 [info ] [MainThread]: 
+[0m22:32:56.609378 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m22:32:56.609378 [info ] [MainThread]: 
+[0m22:32:56.610759 [error] [MainThread]:   Compilation Error in model src_employer (dbt/models\src\src_employer.sql)
+  'COALESCE' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m22:32:56.610759 [info ] [MainThread]: 
+[0m22:32:56.610759 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=1 SKIP=4 TOTAL=15
+[0m22:32:56.613320 [debug] [MainThread]: Command `dbt run` failed at 22:32:56.613320 after 3.78 seconds
+[0m22:32:56.614914 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162964325A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162964AE5A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000162964AF830>]}
+[0m22:32:56.615595 [debug] [MainThread]: Flushing usage events
+[0m22:34:14.201947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F5D94EC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F87C6E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F87C7620>]}
+
+
+============================== 22:34:14.208453 | ca8463fb-4d5d-4250-871f-633170979180 ==============================
+[0m22:34:14.208453 [info ] [MainThread]: Running with dbt=1.8.3
+[0m22:34:14.208453 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\aware\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\aware\\Documents\\github\\Projects\\azure_pipeline_kanilla\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt deps', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:34:14.216662 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m22:34:14.218688 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'ca8463fb-4d5d-4250-871f-633170979180', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F8954800>]}
+[0m22:34:14.428783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ca8463fb-4d5d-4250-871f-633170979180', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F79AFCB0>]}
+[0m22:34:15.759041 [debug] [MainThread]: Set downloads directory='C:\Users\aware\AppData\Local\Temp\dbt-downloads-tycbnd92'
+[0m22:34:15.761056 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m22:34:16.950219 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m22:34:16.950219 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m22:34:17.666223 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m22:34:17.674182 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m22:34:18.929529 [info ] [MainThread]: Installed from version 1.3.1
+[0m22:34:18.931039 [info ] [MainThread]: Up to date!
+[0m22:34:18.931039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'ca8463fb-4d5d-4250-871f-633170979180', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F8A8DFA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F7A84290>]}
+[0m22:34:18.934358 [debug] [MainThread]: Command `dbt deps` succeeded at 22:34:18.934358 after 4.91 seconds
+[0m22:34:18.934358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F7D09340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F8715F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229F7F243B0>]}
+[0m22:34:18.934358 [debug] [MainThread]: Flushing usage events
+[0m22:34:31.316054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002731604CDA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273167ADAC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273167AD580>]}
+
+
+============================== 22:34:31.325798 | 7a1bc8f8-4c0e-47ea-9b68-d95538148c67 ==============================
+[0m22:34:31.325798 [info ] [MainThread]: Running with dbt=1.8.3
+[0m22:34:31.325798 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\aware\\Documents\\github\\Projects\\azure_pipeline_kanilla\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\aware\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:34:31.530434 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m22:34:31.532102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273169CE1B0>]}
+[0m22:34:31.762456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027317F43050>]}
+[0m22:34:31.869346 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027315AAFA40>]}
+[0m22:34:31.874781 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m22:34:32.255133 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m22:34:32.504522 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m22:34:32.506043 [debug] [MainThread]: Partial parsing: updated file: job_ads_dbt://dbt/models\src\src_employer.sql
+[0m22:34:32.963881 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027318450320>]}
+[0m22:34:33.132174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002731814A720>]}
+[0m22:34:33.132174 [info ] [MainThread]: Found 15 models, 1 source, 537 macros
+[0m22:34:33.132174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027317EEB0E0>]}
+[0m22:34:33.136085 [info ] [MainThread]: 
+[0m22:34:33.137621 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:34:33.145242 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_job_ads'
+[0m22:34:33.281171 [debug] [ThreadPool]: Using duckdb connection "list_job_ads"
+[0m22:34:33.281171 [debug] [ThreadPool]: On list_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_job_ads"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"job_ads"'
+    
+  
+  
+[0m22:34:33.283188 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:34:33.315885 [debug] [ThreadPool]: SQL status: OK in 0.033 seconds
+[0m22:34:33.317427 [debug] [ThreadPool]: On list_job_ads: Close
+[0m22:34:33.325642 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_job_ads, now create_job_ads_main)
+[0m22:34:33.326166 [debug] [ThreadPool]: Creating schema "database: "job_ads"
+schema: "main"
+"
+[0m22:34:33.336592 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:34:33.337618 [debug] [ThreadPool]: On create_job_ads_main: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_job_ads_main"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='job_ads'
+        and type='sqlite'
+    
+  
+[0m22:34:33.338705 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:34:33.364287 [debug] [ThreadPool]: SQL status: OK in 0.028 seconds
+[0m22:34:33.368894 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:34:33.368894 [debug] [ThreadPool]: On create_job_ads_main: BEGIN
+[0m22:34:33.370379 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:34:33.370379 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:34:33.370379 [debug] [ThreadPool]: On create_job_ads_main: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "create_job_ads_main"} */
+
+    
+    
+        create schema if not exists "job_ads"."main"
+    
+[0m22:34:33.373373 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:34:33.375638 [debug] [ThreadPool]: On create_job_ads_main: COMMIT
+[0m22:34:33.375638 [debug] [ThreadPool]: Using duckdb connection "create_job_ads_main"
+[0m22:34:33.375638 [debug] [ThreadPool]: On create_job_ads_main: COMMIT
+[0m22:34:33.375638 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:34:33.378152 [debug] [ThreadPool]: On create_job_ads_main: Close
+[0m22:34:33.384534 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_job_ads_main'
+[0m22:34:33.392091 [debug] [ThreadPool]: Using duckdb connection "list_job_ads_main"
+[0m22:34:33.392091 [debug] [ThreadPool]: On list_job_ads_main: BEGIN
+[0m22:34:33.392091 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:34:33.420111 [debug] [ThreadPool]: SQL status: OK in 0.027 seconds
+[0m22:34:33.421918 [debug] [ThreadPool]: Using duckdb connection "list_job_ads_main"
+[0m22:34:33.421918 [debug] [ThreadPool]: On list_job_ads_main: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "connection_name": "list_job_ads_main"} */
+select
+      'job_ads' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'job_ads'
+  
+[0m22:34:33.453067 [debug] [ThreadPool]: SQL status: OK in 0.031 seconds
+[0m22:34:33.456126 [debug] [ThreadPool]: On list_job_ads_main: ROLLBACK
+[0m22:34:33.458138 [debug] [ThreadPool]: Failed to rollback 'list_job_ads_main'
+[0m22:34:33.458138 [debug] [ThreadPool]: On list_job_ads_main: Close
+[0m22:34:33.466262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027315FE6F30>]}
+[0m22:34:33.466262 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:34:33.466262 [debug] [MainThread]: On master: BEGIN
+[0m22:34:33.470049 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:34:33.493174 [debug] [MainThread]: SQL status: OK in 0.027 seconds
+[0m22:34:33.493174 [debug] [MainThread]: On master: COMMIT
+[0m22:34:33.493174 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:34:33.493174 [debug] [MainThread]: On master: COMMIT
+[0m22:34:33.493174 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:34:33.493174 [debug] [MainThread]: On master: Close
+[0m22:34:33.503751 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:34:33.504920 [info ] [MainThread]: 
+[0m22:34:33.511164 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:34:33.512259 [info ] [Thread-1 (]: 1 of 15 START sql view model main.src_auxilliary_attributes .................... [RUN]
+[0m22:34:33.514277 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.job_ads_dbt.src_auxilliary_attributes'
+[0m22:34:33.532322 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:34:33.546435 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.548229 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:34:33.599793 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.603349 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.603349 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: BEGIN
+[0m22:34:33.603349 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:34:33.633622 [debug] [Thread-1 (]: SQL status: OK in 0.029 seconds
+[0m22:34:33.634170 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.635247 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+
+  
+  create view "job_ads"."main"."src_auxilliary_attributes__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    COALESCE(experience_required, FALSE) as experience_required,
+    COALESCE(access_to_own_car, FALSE) as access_to_own_car,
+    COALESCE(driving_license_required, FALSE) as driving_license_required
+from STG_HR_JOBS
+  );
+
+[0m22:34:33.636328 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:33.649432 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.650507 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+alter view "job_ads"."main"."src_auxilliary_attributes" rename to "src_auxilliary_attributes__dbt_backup"
+[0m22:34:33.652248 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:33.658747 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.659324 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+alter view "job_ads"."main"."src_auxilliary_attributes__dbt_tmp" rename to "src_auxilliary_attributes"
+[0m22:34:33.661255 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:33.680715 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: COMMIT
+[0m22:34:33.687802 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.687802 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: COMMIT
+[0m22:34:33.693982 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m22:34:33.702790 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_auxilliary_attributes"
+[0m22:34:33.702790 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_auxilliary_attributes"} */
+drop view if exists "job_ads"."main"."src_auxilliary_attributes__dbt_backup" cascade
+[0m22:34:33.707380 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:33.711886 [debug] [Thread-1 (]: On model.job_ads_dbt.src_auxilliary_attributes: Close
+[0m22:34:33.758111 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273188DE210>]}
+[0m22:34:33.760323 [info ] [Thread-1 (]: 1 of 15 OK created sql view model main.src_auxilliary_attributes ............... [[32mOK[0m in 0.24s]
+[0m22:34:33.761612 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_auxilliary_attributes
+[0m22:34:33.763127 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_employer
+[0m22:34:33.764492 [info ] [Thread-1 (]: 2 of 15 START sql view model main.src_employer ................................. [RUN]
+[0m22:34:33.765626 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_auxilliary_attributes, now model.job_ads_dbt.src_employer)
+[0m22:34:33.765626 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_employer
+[0m22:34:33.785263 [debug] [Thread-1 (]: Compilation Error in model src_employer (dbt/models\src\src_employer.sql)
+  'capitalize_first_letter' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m22:34:33.786428 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027318A1F6E0>]}
+[0m22:34:33.787938 [error] [Thread-1 (]: 2 of 15 ERROR creating sql view model main.src_employer ........................ [[31mERROR[0m in 0.02s]
+[0m22:34:33.790544 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_employer
+[0m22:34:33.790544 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_job_ads
+[0m22:34:33.794100 [info ] [Thread-1 (]: 3 of 15 START sql view model main.src_job_ads .................................. [RUN]
+[0m22:34:33.796621 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_employer, now model.job_ads_dbt.src_job_ads)
+[0m22:34:33.797141 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_job_ads
+[0m22:34:33.804348 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.804348 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_job_ads
+[0m22:34:33.815246 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.815246 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.818050 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: BEGIN
+[0m22:34:33.818050 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:33.875178 [debug] [Thread-1 (]: SQL status: OK in 0.058 seconds
+[0m22:34:33.878502 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.878502 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+
+  
+  create view "job_ads"."main"."src_job_ads__dbt_tmp" as (
+    -- this is an extract of the model
+
+with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    id,
+    COALESCE(employment_type__label, 'Ospecifierad') as employment_type,
+    COALESCE(salary_type__label, 'Ospecifierad') as salary_type,
+    COALESCE(duration__label, 'Ospecifierad') as duration,
+    COALESCE(experience_required, FALSE) as experience_required,
+    COALESCE(access_to_own_car, FALSE) as access_to_own_car,
+    COALESCE(driving_license_required, FALSE) as driving_license_required,
+    scope_of_work__min as scope_of_work_min,
+    scope_of_work__max as scope_of_work_max,
+    employer__name as employer_name,
+    occupation__label as occupation,
+    COALESCE(number_of_vacancies, 1) as vacancies,
+    relevance,
+    application_deadline
+from STG_HR_JOBS
+  );
+
+[0m22:34:33.880938 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:33.883922 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.887951 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+alter view "job_ads"."main"."src_job_ads" rename to "src_job_ads__dbt_backup"
+[0m22:34:33.889747 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:33.895147 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.897161 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+alter view "job_ads"."main"."src_job_ads__dbt_tmp" rename to "src_job_ads"
+[0m22:34:33.899177 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:33.899710 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: COMMIT
+[0m22:34:33.899710 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.903225 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: COMMIT
+[0m22:34:33.924318 [debug] [Thread-1 (]: SQL status: OK in 0.020 seconds
+[0m22:34:33.930117 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_ads"
+[0m22:34:33.931200 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_ads"} */
+drop view if exists "job_ads"."main"."src_job_ads__dbt_backup" cascade
+[0m22:34:33.932991 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:33.935005 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_ads: Close
+[0m22:34:33.983437 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027318AF81A0>]}
+[0m22:34:33.984975 [info ] [Thread-1 (]: 3 of 15 OK created sql view model main.src_job_ads ............................. [[32mOK[0m in 0.19s]
+[0m22:34:33.986152 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_job_ads
+[0m22:34:33.987593 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_job_description
+[0m22:34:33.988103 [info ] [Thread-1 (]: 4 of 15 START sql view model main.src_job_description .......................... [RUN]
+[0m22:34:33.989784 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_job_ads, now model.job_ads_dbt.src_job_description)
+[0m22:34:33.989784 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_job_description
+[0m22:34:33.996537 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_job_description"
+[0m22:34:33.999646 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_job_description
+[0m22:34:34.007102 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_job_description"
+[0m22:34:34.009977 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:34:34.012210 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: BEGIN
+[0m22:34:34.012210 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:34.062542 [debug] [Thread-1 (]: SQL status: OK in 0.051 seconds
+[0m22:34:34.062542 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:34:34.062542 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+
+  
+  create view "job_ads"."main"."src_job_description__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    id,
+    headline,
+    COALESCE(description__text, 'Beskrivning saknas') as description_text,
+    COALESCE(description__text_formatted, 'Beskrivning saknas') as description_html
+from STG_HR_JOBS
+  );
+
+[0m22:34:34.065666 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:34.075312 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:34:34.075312 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+alter view "job_ads"."main"."src_job_description" rename to "src_job_description__dbt_backup"
+[0m22:34:34.079335 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.083076 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:34:34.085100 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+alter view "job_ads"."main"."src_job_description__dbt_tmp" rename to "src_job_description"
+[0m22:34:34.085100 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.088123 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: COMMIT
+[0m22:34:34.089650 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:34:34.091578 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: COMMIT
+[0m22:34:34.113758 [debug] [Thread-1 (]: SQL status: OK in 0.021 seconds
+[0m22:34:34.116976 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_description"
+[0m22:34:34.118562 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_description"} */
+drop view if exists "job_ads"."main"."src_job_description__dbt_backup" cascade
+[0m22:34:34.120542 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:34:34.124572 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_description: Close
+[0m22:34:34.168132 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027319B88E90>]}
+[0m22:34:34.169245 [info ] [Thread-1 (]: 4 of 15 OK created sql view model main.src_job_description ..................... [[32mOK[0m in 0.18s]
+[0m22:34:34.169245 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_job_description
+[0m22:34:34.169245 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_job_details
+[0m22:34:34.172349 [info ] [Thread-1 (]: 5 of 15 START sql view model main.src_job_details .............................. [RUN]
+[0m22:34:34.172349 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_job_description, now model.job_ads_dbt.src_job_details)
+[0m22:34:34.172349 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_job_details
+[0m22:34:34.177529 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_job_details"
+[0m22:34:34.179544 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_job_details
+[0m22:34:34.182878 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_job_details"
+[0m22:34:34.182878 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:34:34.182878 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: BEGIN
+[0m22:34:34.188327 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:34.227149 [debug] [Thread-1 (]: SQL status: OK in 0.042 seconds
+[0m22:34:34.231671 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:34:34.231671 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+
+  
+  create view "job_ads"."main"."src_job_details__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    COALESCE(employment_type__label, 'Ospecifierad') as employment_type,
+    COALESCE(salary_type__label, 'Ospecifierad') as salary_type,
+    COALESCE(duration__label, 'Ospecifierad') as duration,
+    scope_of_work__min as scope_of_work_min,
+    scope_of_work__max as scope_of_work_max
+from STG_HR_JOBS
+  );
+
+[0m22:34:34.233766 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:34.234796 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:34:34.234796 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+alter view "job_ads"."main"."src_job_details" rename to "src_job_details__dbt_backup"
+[0m22:34:34.241222 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.245308 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:34:34.245308 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+alter view "job_ads"."main"."src_job_details__dbt_tmp" rename to "src_job_details"
+[0m22:34:34.248964 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.249622 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: COMMIT
+[0m22:34:34.251651 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:34:34.251651 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: COMMIT
+[0m22:34:34.255670 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:34.259598 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_job_details"
+[0m22:34:34.259598 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_job_details"} */
+drop view if exists "job_ads"."main"."src_job_details__dbt_backup" cascade
+[0m22:34:34.265534 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:34:34.266063 [debug] [Thread-1 (]: On model.job_ads_dbt.src_job_details: Close
+[0m22:34:34.310799 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273189F56D0>]}
+[0m22:34:34.310799 [info ] [Thread-1 (]: 5 of 15 OK created sql view model main.src_job_details ......................... [[32mOK[0m in 0.13s]
+[0m22:34:34.310799 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_job_details
+[0m22:34:34.310799 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.src_occupation
+[0m22:34:34.314136 [info ] [Thread-1 (]: 6 of 15 START sql view model main.src_occupation ............................... [RUN]
+[0m22:34:34.314136 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_job_details, now model.job_ads_dbt.src_occupation)
+[0m22:34:34.316303 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.src_occupation
+[0m22:34:34.320771 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.src_occupation"
+[0m22:34:34.322943 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.src_occupation
+[0m22:34:34.330302 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.src_occupation"
+[0m22:34:34.331378 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:34:34.331378 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: BEGIN
+[0m22:34:34.331378 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:34.373175 [debug] [Thread-1 (]: SQL status: OK in 0.041 seconds
+[0m22:34:34.374492 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:34:34.376049 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+
+  
+  create view "job_ads"."main"."src_occupation__dbt_tmp" as (
+    with STG_HR_JOBS as (select * from "job_ads"."staging"."JOB_ADS")
+
+select
+    occupation_group__concept_id as occupation_group_id,
+    occupation_field__concept_id as occupation_field_id,
+    occupation__label as occupation,
+    occupation_group__label as occupation_group,
+    occupation_field__label as occupation_field
+from STG_HR_JOBS
+  );
+
+[0m22:34:34.377166 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:34.379725 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:34:34.383754 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+alter view "job_ads"."main"."src_occupation" rename to "src_occupation__dbt_backup"
+[0m22:34:34.384847 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.391304 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:34:34.391304 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+alter view "job_ads"."main"."src_occupation__dbt_tmp" rename to "src_occupation"
+[0m22:34:34.391304 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.483625 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: COMMIT
+[0m22:34:34.483625 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:34:34.483625 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: COMMIT
+[0m22:34:34.505397 [debug] [Thread-1 (]: SQL status: OK in 0.021 seconds
+[0m22:34:34.509515 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.src_occupation"
+[0m22:34:34.509515 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.src_occupation"} */
+drop view if exists "job_ads"."main"."src_occupation__dbt_backup" cascade
+[0m22:34:34.513350 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:34.517691 [debug] [Thread-1 (]: On model.job_ads_dbt.src_occupation: Close
+[0m22:34:34.564660 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027319BB0CE0>]}
+[0m22:34:34.564660 [info ] [Thread-1 (]: 6 of 15 OK created sql view model main.src_occupation .......................... [[32mOK[0m in 0.25s]
+[0m22:34:34.564660 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.src_occupation
+[0m22:34:34.564660 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:34:34.567968 [info ] [Thread-1 (]: 7 of 15 START sql view model main.dim_auxilliary_attributes .................... [RUN]
+[0m22:34:34.568990 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.src_occupation, now model.job_ads_dbt.dim_auxilliary_attributes)
+[0m22:34:34.570110 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:34:34.596210 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.597342 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:34:34.602010 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.603677 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.606150 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: BEGIN
+[0m22:34:34.606664 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:34.651131 [debug] [Thread-1 (]: SQL status: OK in 0.048 seconds
+[0m22:34:34.651131 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.651131 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+
+  
+  create view "job_ads"."main"."dim_auxilliary_attributes__dbt_tmp" as (
+    with src_auxilliary_attributes as (select * from "job_ads"."main"."src_auxilliary_attributes")
+
+
+select
+    md5(cast(coalesce(cast(experience_required as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(access_to_own_car as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(driving_license_required as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as auxilliary_id,
+    max(experience_required) as experience_required,
+    max(access_to_own_car) as access_to_own_car,
+    max(driving_license_required) as driving_license_required
+from src_auxilliary_attributes
+group by auxilliary_id
+
+ --This model creates a dimension table for auxiliary attributes related to job postings.
+  );
+
+[0m22:34:34.661485 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:34.665519 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.665519 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+alter view "job_ads"."main"."dim_auxilliary_attributes" rename to "dim_auxilliary_attributes__dbt_backup"
+[0m22:34:34.667276 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.668797 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.668797 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+alter view "job_ads"."main"."dim_auxilliary_attributes__dbt_tmp" rename to "dim_auxilliary_attributes"
+[0m22:34:34.674749 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.676576 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: COMMIT
+[0m22:34:34.679136 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.679136 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: COMMIT
+[0m22:34:34.688997 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m22:34:34.692572 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_auxilliary_attributes"
+[0m22:34:34.692572 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_auxilliary_attributes"} */
+drop view if exists "job_ads"."main"."dim_auxilliary_attributes__dbt_backup" cascade
+[0m22:34:34.694668 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:34.700550 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_auxilliary_attributes: Close
+[0m22:34:34.749469 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027317F41C70>]}
+[0m22:34:34.750487 [info ] [Thread-1 (]: 7 of 15 OK created sql view model main.dim_auxilliary_attributes ............... [[32mOK[0m in 0.18s]
+[0m22:34:34.751548 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_auxilliary_attributes
+[0m22:34:34.751548 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_employer
+[0m22:34:34.753293 [info ] [Thread-1 (]: 8 of 15 SKIP relation main.dim_employer ........................................ [[33mSKIP[0m]
+[0m22:34:34.754568 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_employer
+[0m22:34:34.754568 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.fct_job_ads
+[0m22:34:34.756320 [info ] [Thread-1 (]: 9 of 15 START sql view model main.fct_job_ads .................................. [RUN]
+[0m22:34:34.758444 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.dim_auxilliary_attributes, now model.job_ads_dbt.fct_job_ads)
+[0m22:34:34.759349 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.fct_job_ads
+[0m22:34:34.771930 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.771930 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.fct_job_ads
+[0m22:34:34.782243 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.785660 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.786819 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: BEGIN
+[0m22:34:34.786819 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:34.829097 [debug] [Thread-1 (]: SQL status: OK in 0.043 seconds
+[0m22:34:34.831114 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.831114 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+
+  
+  create view "job_ads"."main"."fct_job_ads__dbt_tmp" as (
+    with HR_JOBS as (select * from "job_ads"."main"."src_job_ads")
+
+select
+    id as job_description_id,
+    md5(cast(coalesce(cast(experience_required as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(access_to_own_car as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(driving_license_required as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as auxilliary_id,
+    md5(cast(coalesce(cast(employer_name as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as employer_id,
+    md5(cast(coalesce(cast(employment_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(salary_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(duration as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_min as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_max as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as job_details_id,
+    md5(cast(coalesce(cast(occupation as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as occupation_id,
+    vacancies,
+    relevance,
+    application_deadline
+from HR_JOBS
+  );
+
+[0m22:34:34.836227 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:34.840099 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.840099 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+alter view "job_ads"."main"."fct_job_ads" rename to "fct_job_ads__dbt_backup"
+[0m22:34:34.844493 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.847524 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.847524 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+alter view "job_ads"."main"."fct_job_ads__dbt_tmp" rename to "fct_job_ads"
+[0m22:34:34.850410 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.853504 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: COMMIT
+[0m22:34:34.853504 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.855015 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: COMMIT
+[0m22:34:34.863002 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m22:34:34.865519 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.fct_job_ads"
+[0m22:34:34.865519 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.fct_job_ads"} */
+drop view if exists "job_ads"."main"."fct_job_ads__dbt_backup" cascade
+[0m22:34:34.872369 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m22:34:34.876003 [debug] [Thread-1 (]: On model.job_ads_dbt.fct_job_ads: Close
+[0m22:34:34.917057 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027318A1EF60>]}
+[0m22:34:34.918121 [info ] [Thread-1 (]: 9 of 15 OK created sql view model main.fct_job_ads ............................. [[32mOK[0m in 0.16s]
+[0m22:34:34.919794 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.fct_job_ads
+[0m22:34:34.919794 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_job_description
+[0m22:34:34.919794 [info ] [Thread-1 (]: 10 of 15 START sql view model main.dim_job_description ......................... [RUN]
+[0m22:34:34.919794 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.fct_job_ads, now model.job_ads_dbt.dim_job_description)
+[0m22:34:34.924052 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_job_description
+[0m22:34:34.927605 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_job_description"
+[0m22:34:34.928746 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_job_description
+[0m22:34:34.934428 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_job_description"
+[0m22:34:34.936285 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:34:34.937210 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: BEGIN
+[0m22:34:34.937720 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:34.980140 [debug] [Thread-1 (]: SQL status: OK in 0.044 seconds
+[0m22:34:34.980140 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:34:34.982954 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+
+  
+  create view "job_ads"."main"."dim_job_description__dbt_tmp" as (
+    with src_job_description as (select * from "job_ads"."main"."src_job_description")
+
+select
+    id as job_description_id,
+    headline,
+    description_text,
+    description_html
+from src_job_description
+  );
+
+[0m22:34:34.986399 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:34:34.991145 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:34:34.993202 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+alter view "job_ads"."main"."dim_job_description" rename to "dim_job_description__dbt_backup"
+[0m22:34:34.994299 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:34.995360 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:34:34.999442 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+alter view "job_ads"."main"."dim_job_description__dbt_tmp" rename to "dim_job_description"
+[0m22:34:34.999442 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:35.002617 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: COMMIT
+[0m22:34:35.003756 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:34:35.003756 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: COMMIT
+[0m22:34:35.007012 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:34:35.011657 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_description"
+[0m22:34:35.011657 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_description"} */
+drop view if exists "job_ads"."main"."dim_job_description__dbt_backup" cascade
+[0m22:34:35.015443 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:34:35.016095 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_description: Close
+[0m22:34:35.055709 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027318B04AD0>]}
+[0m22:34:35.056420 [info ] [Thread-1 (]: 10 of 15 OK created sql view model main.dim_job_description .................... [[32mOK[0m in 0.14s]
+[0m22:34:35.059222 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_job_description
+[0m22:34:35.060320 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_job_details
+[0m22:34:35.061334 [info ] [Thread-1 (]: 11 of 15 START sql view model main.dim_job_details ............................. [RUN]
+[0m22:34:35.061334 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.dim_job_description, now model.job_ads_dbt.dim_job_details)
+[0m22:34:35.063432 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_job_details
+[0m22:34:35.064523 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.070116 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_job_details
+[0m22:34:35.080900 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.081917 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.084114 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: BEGIN
+[0m22:34:35.084114 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:35.125462 [debug] [Thread-1 (]: SQL status: OK in 0.044 seconds
+[0m22:34:35.125462 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.129752 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+
+  
+  create view "job_ads"."main"."dim_job_details__dbt_tmp" as (
+    with src_job_details as (select * from "job_ads"."main"."src_job_details")
+
+select
+    md5(cast(coalesce(cast(employment_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(salary_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(duration as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_min as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(scope_of_work_max as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as job_details_id,
+    max(employment_type) as employment_type,
+    max(salary_type) as salary_type,
+    max(duration) as duration,
+    max(scope_of_work_min) as scope_of_work_min,
+    max(scope_of_work_max) as scope_of_work_max
+from src_job_details
+group by job_details_id
+  );
+
+[0m22:34:35.133797 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:34:35.138302 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.139452 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+alter view "job_ads"."main"."dim_job_details" rename to "dim_job_details__dbt_backup"
+[0m22:34:35.139452 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:35.144356 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.147247 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+alter view "job_ads"."main"."dim_job_details__dbt_tmp" rename to "dim_job_details"
+[0m22:34:35.148770 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:35.150822 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: COMMIT
+[0m22:34:35.150822 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.152287 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: COMMIT
+[0m22:34:35.157693 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:34:35.163390 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_job_details"
+[0m22:34:35.163390 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_job_details"} */
+drop view if exists "job_ads"."main"."dim_job_details__dbt_backup" cascade
+[0m22:34:35.169454 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:35.171073 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_job_details: Close
+[0m22:34:35.216460 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002731848A4E0>]}
+[0m22:34:35.218234 [info ] [Thread-1 (]: 11 of 15 OK created sql view model main.dim_job_details ........................ [[32mOK[0m in 0.16s]
+[0m22:34:35.220063 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_job_details
+[0m22:34:35.220063 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.dim_occupation
+[0m22:34:35.220063 [info ] [Thread-1 (]: 12 of 15 START sql view model main.dim_occupation .............................. [RUN]
+[0m22:34:35.220063 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.job_ads_dbt.dim_job_details, now model.job_ads_dbt.dim_occupation)
+[0m22:34:35.220063 [debug] [Thread-1 (]: Began compiling node model.job_ads_dbt.dim_occupation
+[0m22:34:35.228736 [debug] [Thread-1 (]: Writing injected SQL for node "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.228736 [debug] [Thread-1 (]: Began executing node model.job_ads_dbt.dim_occupation
+[0m22:34:35.237407 [debug] [Thread-1 (]: Writing runtime sql for node "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.238897 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.240087 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: BEGIN
+[0m22:34:35.240809 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:34:35.283948 [debug] [Thread-1 (]: SQL status: OK in 0.044 seconds
+[0m22:34:35.285324 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.285324 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+
+  
+  create view "job_ads"."main"."dim_occupation__dbt_tmp" as (
+    with src_occupation as (select * from "job_ads"."main"."src_occupation")
+
+-- we use aggregate function max() for deduplicate, but there are more alternative codes one can use for this purpose
+select
+    md5(cast(coalesce(cast(occupation as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as occupation_id,
+    occupation,
+    max(occupation_group) as occupation_group,
+    max(occupation_field) as occupation_field
+from src_occupation
+group by occupation
+  );
+
+[0m22:34:35.289868 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:34:35.294741 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.294741 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+alter view "job_ads"."main"."dim_occupation" rename to "dim_occupation__dbt_backup"
+[0m22:34:35.294741 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:35.301745 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.302823 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+alter view "job_ads"."main"."dim_occupation__dbt_tmp" rename to "dim_occupation"
+[0m22:34:35.303893 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:34:35.306154 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: COMMIT
+[0m22:34:35.306154 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.306154 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: COMMIT
+[0m22:34:35.309948 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:34:35.316219 [debug] [Thread-1 (]: Using duckdb connection "model.job_ads_dbt.dim_occupation"
+[0m22:34:35.318236 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "duckdb_profile", "target_name": "dev", "node_id": "model.job_ads_dbt.dim_occupation"} */
+drop view if exists "job_ads"."main"."dim_occupation__dbt_backup" cascade
+[0m22:34:35.323106 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:34:35.323106 [debug] [Thread-1 (]: On model.job_ads_dbt.dim_occupation: Close
+[0m22:34:35.380787 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a1bc8f8-4c0e-47ea-9b68-d95538148c67', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273169CCA10>]}
+[0m22:34:35.381913 [info ] [Thread-1 (]: 12 of 15 OK created sql view model main.dim_occupation ......................... [[32mOK[0m in 0.16s]
+[0m22:34:35.382923 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.dim_occupation
+[0m22:34:35.382923 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.mart_Bygg_och_anlaggning
+[0m22:34:35.385289 [info ] [Thread-1 (]: 13 of 15 SKIP relation main.mart_Bygg_och_anlaggning ........................... [[33mSKIP[0m]
+[0m22:34:35.387557 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.mart_Bygg_och_anlaggning
+[0m22:34:35.388108 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.mart_Kultur_media_design
+[0m22:34:35.388652 [info ] [Thread-1 (]: 14 of 15 SKIP relation main.mart_Kultur_media_design ........................... [[33mSKIP[0m]
+[0m22:34:35.390469 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.mart_Kultur_media_design
+[0m22:34:35.392120 [debug] [Thread-1 (]: Began running node model.job_ads_dbt.mart_pedagogik
+[0m22:34:35.393336 [info ] [Thread-1 (]: 15 of 15 SKIP relation main.mart_pedagogik ..................................... [[33mSKIP[0m]
+[0m22:34:35.395003 [debug] [Thread-1 (]: Finished running node model.job_ads_dbt.mart_pedagogik
+[0m22:34:35.397741 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:34:35.398294 [debug] [MainThread]: On master: BEGIN
+[0m22:34:35.399439 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:34:35.448488 [debug] [MainThread]: SQL status: OK in 0.049 seconds
+[0m22:34:35.448488 [debug] [MainThread]: On master: COMMIT
+[0m22:34:35.448488 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:34:35.450001 [debug] [MainThread]: On master: COMMIT
+[0m22:34:35.450001 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:34:35.450001 [debug] [MainThread]: On master: Close
+[0m22:34:35.456638 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:34:35.457772 [debug] [MainThread]: Connection 'create_job_ads_main' was properly closed.
+[0m22:34:35.457772 [debug] [MainThread]: Connection 'list_job_ads_main' was properly closed.
+[0m22:34:35.457772 [debug] [MainThread]: Connection 'model.job_ads_dbt.dim_occupation' was properly closed.
+[0m22:34:35.460304 [info ] [MainThread]: 
+[0m22:34:35.461471 [info ] [MainThread]: Finished running 15 view models in 0 hours 0 minutes and 2.32 seconds (2.32s).
+[0m22:34:35.466296 [debug] [MainThread]: Command end result
+[0m22:34:35.530483 [info ] [MainThread]: 
+[0m22:34:35.532317 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m22:34:35.532317 [info ] [MainThread]: 
+[0m22:34:35.534158 [error] [MainThread]:   Compilation Error in model src_employer (dbt/models\src\src_employer.sql)
+  'capitalize_first_letter' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m22:34:35.534158 [info ] [MainThread]: 
+[0m22:34:35.534158 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=1 SKIP=4 TOTAL=15
+[0m22:34:35.538109 [debug] [MainThread]: Command `dbt run` failed at 22:34:35.538109 after 4.46 seconds
+[0m22:34:35.539060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002731828F020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002731828EB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027315BB8B90>]}
+[0m22:34:35.539060 [debug] [MainThread]: Flushing usage events

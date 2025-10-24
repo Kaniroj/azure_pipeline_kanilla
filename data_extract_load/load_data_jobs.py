@@ -3,6 +3,7 @@
 import dlt
 import requests
 import json
+from pathlib import Path
 
 # DLT configuration (برای کنترل رفتار staging)
 dlt.config["load.truncate_staging_dataset"] = True
